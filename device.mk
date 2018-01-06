@@ -167,7 +167,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.nash \
     init.nash.usb.rc \
-    init.nash.ramdump.rc \
     init.nash.rc \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
