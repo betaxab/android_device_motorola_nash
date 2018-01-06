@@ -1,2 +1,3 @@
-add_lunch_combo omni_nash-eng
-add_lunch_combo omni_nash-userdebug
+add_lunch_combo lineage_nash-eng
+add_lunch_combo lineage_nash-userdebug
+add_lunch_combo lineage_nash-user
