@@ -208,6 +208,10 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service
 
+# Lineage Actions
+PRODUCT_PACKAGES += \
+    LineageActions
+
 # Media
 PRODUCT_COPY_FILES += \
     device/motorola/nash/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
