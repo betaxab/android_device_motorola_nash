@@ -61,7 +61,7 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     libz
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += device/essential/nash/overlay
+DEVICE_PACKAGE_OVERLAYS += device/motorola/nash/overlay
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
@@ -76,4 +76,4 @@ PRODUCT_RELEASE_NAME := nash
 PRODUCT_BUILD_PROP_OVERRIDES += \
         PRODUCT_NAME=nash \
         BUILD_FINGERPRINT=motorola/nash_tmo/nash:8.0.0/OCX27.109-36/43:user/test-keys \
-        PRIVATE_BUILD_DESC="nash_tmo 8.0.0 OCX27.109-36 43 test-keys"
+        PRIVATE_BUILD_DESC="nash_tmo-user 8.0.0 OCX27.109-36 43 test-keys"
