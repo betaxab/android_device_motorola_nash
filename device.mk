@@ -39,19 +39,10 @@ PRODUCT_PACKAGES += \
     tinymix
 
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    device/motorola/nash/audio/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf \
     device/motorola/nash/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
-    device/motorola/nash/audio/audio_platform_info_i2s.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_i2s.xml \
     device/motorola/nash/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    device/motorola/nash/audio/listen_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/listen_platform_info.xml \
-    device/motorola/nash/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
-    device/motorola/nash/audio/mixer_paths_dtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_dtp.xml \
-    device/motorola/nash/audio/mixer_paths_i2s.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_i2s.xml \
-    device/motorola/nash/audio/mixer_paths_qvr.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_qvr.xml \
-    device/motorola/nash/audio/mixer_paths_skuk.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_skuk.xml \
-    device/motorola/nash/audio/mixer_paths_tasha.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tasha.xml \
-    device/motorola/nash/audio/mixer_paths_tasha_mic.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tasha_mic.xml \
-    device/motorola/nash/audio/mixer_paths_tavil.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tavil.xml
+    device/motorola/nash/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
@@ -78,9 +69,9 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_COPY_FILES += \
     device/motorola/nash/configs/camera/camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config.xml \
-    device/motorola/nash/configs/camera/imx258_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/imx258_chromatix.xml \
-    device/motorola/nash/configs/camera/imx268_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/imx268_chromatix.xml \
-    device/motorola/nash/configs/camera/imx258_mono_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/imx258_mono_chromatix.xml
+    device/motorola/nash/configs/camera/imx386_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/imx386_chromatix.xml \
+    device/motorola/nash/configs/camera/mot_ov5695_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_ov5695_chromatix.xml \
+    device/motorola/nash/configs/camera/imx386_mono_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/imx386_mono_chromatix.xml
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
@@ -139,7 +130,7 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service
 
 PRODUCT_COPY_FILES += \
-#    device/motorola/nash/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl
+    device/motorola/nash/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl
 
 # GApps
 GAPPS_VARIANT := nano
@@ -173,20 +164,20 @@ PRODUCT_PACKAGES += \
     android.hardware.health@1.0-service
 
 # Init
-#PRODUCT_PACKAGES += \
-#    fstab.mata \
-#    init.mata.modprobe.rc \
-#    init.mata.ramdump.rc \
-#    init.mata.rc \
-#    init.msm.usb.configfs.rc \
-#    init.qcom.devstart.sh \
-#    init.qcom.early_boot.sh \
-#    init.qcom.post_boot.sh \
-#    init.qcom.sensors.sh \
-#    init.qcom.sh \
-#    init.qcom.usb.rc \
-#    init.target.rc \
-#    ueventd.mata.rc
+PRODUCT_PACKAGES += \
+    fstab.nash \
+    init.nash.usb.rc \
+    init.nash.ramdump.rc \
+    init.nash.rc \
+    init.qcom.early_boot.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.sensors.sh \
+    init.qcom.sh \
+    init.mmi.laser.sh \
+    init.mmi.touch.sh \
+    init.oem.hw.sh \
+    init.target.rc \
+    ueventd.nash.rc
 
 # IPACM
 PRODUCT_PACKAGES += \
@@ -243,7 +234,6 @@ PRODUCT_COPY_FILES += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/configs/privapp-permissions-mata.xml:system/etc/permissions/privapp-permissions-mata.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -336,7 +326,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.1-service.mata
+    android.hardware.thermal@1.1-service.nash
 
 # Touchscreen
 PRODUCT_PACKAGES += \
@@ -351,7 +341,7 @@ PRODUCT_PACKAGES += \
 
 # Verity
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/soc/1da4000.ufshc/by-name/system
-#$(call inherit-product, build/target/product/verity.mk)
+$(call inherit-product, build/target/product/verity.mk)
 
 # Vibrator
 PRODUCT_PACKAGES += \
